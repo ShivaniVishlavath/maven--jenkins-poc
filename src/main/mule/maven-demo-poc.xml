@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e3d0436e-ce06-4794-92af-ea7b580c0135" basePath="api" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="maven-demo-flow" doc:id="066cd588-26e4-44a8-81a6-80360c10395c" >
+		<http:listener doc:name="Listener" doc:id="f7e32430-6901-4e2b-8768-43c612645f6a" config-ref="HTTP_Listener_config" path="maven"/>
+		<logger level="INFO" doc:name="START" doc:id="b073102c-a6fd-4fb4-a2c7-4997811b8dc8" message="Flow Started"/>
+		<set-payload value="Deploying to CloudHub 2.0 with Mule Maven Plugin" doc:name="Payload" doc:id="f0149122-6dea-4dcc-ab97-71c1a405bb8d" />
+		<logger level="INFO" doc:name="END" doc:id="cfe51b98-b5be-4217-9e1e-9ea197f8a9fe" message="Flow Ended"/>
+	</flow>
+</mule>
