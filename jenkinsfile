@@ -13,7 +13,7 @@ pipeline{
 				}
 			}
 			
-			stage('Deploy CloudHubs') {
+			stage('Deploy CloudHub') {
 			
 				environment {
 				
