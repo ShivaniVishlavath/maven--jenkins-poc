@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>89f849ee-c0c4-43ae-ad48-a5189f00d31a</groupId>
-	<artifactId>maven-demo-poc</artifactId>
+	<artifactId>maven-demo-poc-2</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>maven-demo-poc</name>
+	<name>maven-demo-poc-2</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,33 +31,28 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
-					 <cloudhub2Deployment>
-					      <uri>https://anypoint.mulesoft.com</uri>
-					      <provider>MC</provider>
-					      <environment>Sandbox</environment>
-					      <target>Cloudhub-US-East-2</target>
-					      <muleVersion>4.4.0</muleVersion>
-					      <!--  <server>anypoint-exchange-v3</server> -->
-					      <username>${username}</username>
-					      <password>${password}</password>
-					      <applicationName>maven-demo-poc-cloudhub-2</applicationName>
-					      <replicas>1</replicas>
-					      <vCores>0.1</vCores>
-					</cloudhub2Deployment>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com/</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>maven-jenkins-poc</applicationName>
+						<environment>${env}</environment>
+				        <region>us-east-1</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<properties>
+						    <key>value</key>
+						 </properties>
+					</cloudHubDeployment>
+					
 				</configuration>
 
 			</plugin>
 		</plugins>
 	</build>
 	
-	  <distributionManagement>
-			    <repository>
-			      <id>anypoint-exchange-v3</id>
-			      <name>Corporate Repository</name>
-			      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-			      <layout>default</layout>
-			    </repository>
-		</distributionManagement>
+	 
 		
 	<dependencies>
 		<dependency>
