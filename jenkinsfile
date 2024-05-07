@@ -27,7 +27,7 @@ pipeline{
 				
 				echo 'Deploying to the configured environment….'
 				
-				bat 'mvn clean deploy -DmuleDeploy  -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW}  -Denv=DEV -Dworkers=1 -DworkerType=MICRO'
+				bat 'mvn clean deploy -DmuleDeploy  -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW}  -Denv=DEV -Dregion=us-east-1 -Dworkers=1 -DworkerType=MICRO'
 				
 			}
 				
