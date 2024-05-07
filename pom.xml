@@ -38,9 +38,9 @@
 						<password>${password}</password>
 						<applicationName>${project.artifactId}</applicationName>
 						<environment>${env}</environment>
-				        <region>us-east-1</region>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
+				        <region>${region}</region>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
 					</cloudHubDeployment>
 					
 				</configuration>
